@@ -16,6 +16,7 @@ class NumberGuessingChallenge {
     this.maxGuessingRange = guessingRange;
     GameLoop();
   }
+
   void GameLoop() {
     secretNumber = GenerateRandomNumber(maxGuessingRange);
     while (true) {
@@ -43,14 +44,13 @@ class NumberGuessingChallenge {
   private boolean PlayAgain() {
     System.out.print("Play again? (y/n) ");
     String ans = sc.next();
-    if (ans.toLowerCase().equals("y")) {
+    if (ans.equalsIgnoreCase("y")) {
       totalGuesses = 0;
       secretNumber = GenerateRandomNumber(maxGuessingRange);
       return true;
     }
     return false;
   }
-   
 
   // ------------------------ Functions ------------------------------ //
   //         These functions can be used in your game loop.            //
